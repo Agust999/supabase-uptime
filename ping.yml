@@ -1,0 +1,17 @@
+name: Ping Supabase
+
+on:
+  schedule:
+    - cron: '0 3 * * *'    # todos los días a las 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  call-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request
+        run: |
+          curl --fail --location --silent --show-error \
+               'https://xqiinsshivjtepdekdje.supabase.co' \
+               -H 'apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxaWluc3NoaXZqdGVwZGVrZGplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxMzE5MTEsImV4cCI6MjA1ODcwNzkxMX0.2pKA5XWVgglRnXtIqF9YZhI8qVdPvF4iu0vDsDj8pdg'' \
+               -H 'Authorization: Bearer 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxaWluc3NoaXZqdGVwZGVrZGplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxMzE5MTEsImV4cCI6MjA1ODcwNzkxMX0.2pKA5XWVgglRnXtIqF9YZhI8qVdPvF4iu0vDsDj8pdg''
